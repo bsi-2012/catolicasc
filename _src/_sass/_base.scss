@@ -204,12 +204,17 @@ li {
 
   @include media($desktop-x) {
     @include span-columns(4);
-    @include omega(3n);
+    &:nth-child(4) {
+      margin-right: 0;
+    }
   }
 }
 
 .footer-section__title {
   text-transform: uppercase;
+  color: $c-white;
+  border-bottom: 2px solid $c-white;
+  padding-bottom: em(10);
 }
 
 .footer-nav__link {
@@ -264,6 +269,7 @@ li {
   margin-bottom: em(30);
   color: $c-white;
   padding: em(20);
+  font-weight: 600;
   @include media($desktop-x) {
     height: em(200);
     @include span-columns(3);
