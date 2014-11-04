@@ -5,6 +5,7 @@
 $c-red: #AA4958;
 $c-darkred: #942536;
 $c-white: #f0f0f0;
+$ablack: rgba(0, 0, 0, .6);
 
 html {
   font-family: 'Helvetica Neue', sans-serif;
@@ -39,7 +40,22 @@ body {
 }
 
 figure {
+  position: relative;
   margin: 0;
+}
+
+.main-banner__caption {
+  @include media($desktop-x) {
+    position: absolute;
+    bottom: 0;
+    background: $ablack;
+    width: 100%;
+    padding: em(20);
+    a {
+      color: $c-white;
+      font-size: em(40);
+    }
+  }
 }
 
 img {
@@ -63,6 +79,15 @@ li {
   text-transform: uppercase;
 }
 
+.alpha-content {
+  margin-top: em(40);
+}
+
+.alpha-content,
+.events-calendar {
+  padding: em(120) 0;
+}
+
 .main-content {
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
@@ -77,15 +102,15 @@ li {
 }
 
 .site-header {
+  padding: 0 0 em(20) 0;
   @include media($desktop-x) {
-    padding: 0 0 em(20) 0;
   }
 }
 
 .site-nav {
   @include media($desktop-x) {
     float: right;
-    margin-top: 30px;
+    margin-top: 35px;
   }
 }
 
@@ -99,9 +124,9 @@ li {
   background: $c-darkred;
   padding: em(10) 0;
   width: 100%;
+  margin-bottom: em(20);
 
   @include media($desktop-x) {
-    margin-bottom: em(20);
   }
 }
 
@@ -130,20 +155,85 @@ li {
   }
 }
 
+.site-nav__link,
+.secondary-nav__link,
+.footer-nav__link {
+  @include media($desktop-x) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .site-footer,
 .site-header {
   background: $c-red;
   @include clearfix;
   a {
     color: $c-white;
-    &:hover {
-      border-bottom: 1px solid $c-white;
-    }
   }
+}
+
+.footer-alpha__content {
+  padding: em(30) 0;
+  margin-bottom: em(20);
+  @include clearfix;
+}
+
+.footer-section__info {
+  padding: em(20);
+
+  @include media($mobile) {
+    @include span-columns(4);
+    text-align: center;
+    font-size: rem(20);
+  }
+
+  @include media($tablet) {
+    @include span-columns(8);
+    text-align: center;
+    font-size: rem(22);
+  }
+
+  @include media($desktop-x) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+.footer-section__title {
+  text-transform: uppercase;
+}
+
+.footer-nav__link {
+  margin: em(3) 0;
+  display: inline-block;
+}
+
+.sponsor-list {
+  display: block;
+  margin-top: em(30);
+}
+
+.copyright {
+  text-align: center;
+  display: block;
+  color: $c-white;
+  padding: em(20) 0;
+  font-size: em(16);
 }
 
 .site-logo {
   @include media($desktop-x) {
     float: left;
   }
+}
+
+.main-banner {
+  position: relative;
+  max-height: em(400);
+}
+
+.main-banner__img {
+  background-size: cover;
 }
