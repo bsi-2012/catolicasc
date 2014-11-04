@@ -38,10 +38,17 @@ gulp.task('imagemin', function () {
     .pipe(gulp.dest('img'));
 });
 
+// Watch Task
+gulp.task('watch', function () {
+  gulp.watch('_src/**/*.*', ['default']);
+});
+
+// Default Task
+gulp.task('default', ['browserify', 'sass', 'imagemin', 'copy']);
+
 // Deploy Task
 gulp.task('deploy', function () {
   gulp.src('_site/**/*')
     .pipe(deploy());
 });
 
-// Watch Task
