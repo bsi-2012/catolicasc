@@ -75,7 +75,8 @@ ul {
     bottom: 0;
     background: $ablack;
     width: 100%;
-    padding: em(20) em(120);
+    padding: em(20) 0;
+    text-align: center;
     a {
       color: $c-white;
       font-size: em(40);
@@ -95,9 +96,9 @@ ul {
 }
 
 .alpha-content {
+  padding-bottom: em(80);
   @include media($desktop-x) {
-    margin-top: em(40);
-    padding: em(140) 0;
+    margin-top: em(70);
   }
 }
 
@@ -213,6 +214,15 @@ ul {
 .site-nav__link,
 .secondary-nav__link,
 .footer-nav__link {
+  @include media($desktop-x) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-nav__link,
+.secondary-nav__link {
   text-transform: uppercase;
   @include media($desktop-x) {
     &:hover {
@@ -269,6 +279,7 @@ ul {
 .footer-nav__link {
   margin: em(3) 0;
   display: inline-block;
+  font-weight: 600;
 }
 
 .sponsor-list {
@@ -291,12 +302,14 @@ ul {
 }
 
 .main-banner {
+  background: $c-darkred;
   position: relative;
-  max-height: em(400);
+  max-height: em(500);
 }
 
 .main-banner__img {
-  background-size: cover;
+  display: block;
+  margin: auto;
 }
 
 .desktop-hide {
