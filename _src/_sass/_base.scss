@@ -44,20 +44,6 @@ figure {
   margin: 0;
 }
 
-.main-banner__caption {
-  @include media($desktop-x) {
-    position: absolute;
-    bottom: 0;
-    background: $ablack;
-    width: 100%;
-    padding: em(20) em(120);
-    a {
-      color: $c-white;
-      font-size: em(40);
-    }
-  }
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -77,6 +63,26 @@ ul {
 
 li {
   text-transform: uppercase;
+}
+
+.main-banner__caption {
+  @include media($desktop-x) {
+    position: absolute;
+    bottom: 0;
+    background: $ablack;
+    width: 100%;
+    padding: em(20) em(120);
+    a {
+      color: $c-white;
+      font-size: em(40);
+    }
+  }
+}
+
+.big-title,
+.med-title {
+  text-transform: uppercase;
+  color: $c-darkred;
 }
 
 .alpha-content {
