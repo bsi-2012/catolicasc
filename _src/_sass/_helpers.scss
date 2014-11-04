@@ -50,7 +50,7 @@
 
 button,
 .btn {
-  // padding: em(10) em(25);
+  padding: em(10) em(25);
   display: inline-block;
   @include transition(all 0.2s ease-in-out);
 }

@@ -5,6 +5,7 @@
 $c-red: #AA4958;
 $c-darkred: #942536;
 $c-white: #f0f0f0;
+$c-black: #0c0c0c;
 $c-blue: #3367d5;
 $ablack: rgba(0, 0, 0, .6);
 
@@ -62,10 +63,6 @@ ul {
   padding: 0;
 }
 
-li {
-  text-transform: uppercase;
-}
-
 .main-banner__caption {
   @include media($desktop-x) {
     position: absolute;
@@ -86,13 +83,17 @@ li {
   color: $c-darkred;
 }
 
+.big-title {
+  padding-bottom: em(10);
+  border-bottom: 2px solid $c-darkred;
+}
+
 .alpha-content {
   margin-top: em(40);
 }
 
-.alpha-content,
-.events-calendar {
-  padding: em(120) 0;
+.alpha-content {
+  padding: em(140) 0;
 }
 
 .main-content {
@@ -165,6 +166,7 @@ li {
 .site-nav__link,
 .secondary-nav__link,
 .footer-nav__link {
+  text-transform: uppercase;
   @include media($desktop-x) {
     &:hover {
       text-decoration: underline;
@@ -253,15 +255,69 @@ li {
 // Main Content
 
 .other-news {
+  padding-right: em(50);
   @include media($desktop-x) {
     @include span-columns(8);
   }
 }
 
+.other-news__item {
+  font-size: rem(18);
+  margin-bottom: em(10);
+}
+
+.other-news__date {
+  font-weight: bold;
+}
+
+.other-news__link {
+  color: $c-black;
+  &:hover {
+    border-bottom: 1px dotted $c-black;
+  }
+}
+
+.see-more__news {
+  background: $c-darkred;
+  color: $c-white;
+  font-weight: 600;
+  margin-top: 20px;
+  &:hover {
+    background: $c-red;
+  }
+
+  @include media($desktop-x) {
+
+  }
+}
+
 .site-sidebar {
+  @include media($mobile) {
+    margin-top: em(80);
+  }
+  @include media($tablet) {
+    margin-top: em(100);
+  }
   @include media($desktop-x) {
     @include span-columns(4);
   }
+}
+
+.site-sidebar__item {
+  position: relative;
+  height: em(200);
+  margin-bottom: em(20);
+  background: #666;
+  width: 100%;
+}
+
+.site-sidebar__link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  color: $c-white;
+  font-size: em(18);
 }
 
 .events-calendar__item {
