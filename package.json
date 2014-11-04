@@ -29,5 +29,8 @@
     "imagemin-pngquant": "^4.0.0",
     "react": "^0.12.0",
     "reactify": "^0.15.2"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.2"
   }
 }
