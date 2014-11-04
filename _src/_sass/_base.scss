@@ -269,9 +269,17 @@ li {
   margin-bottom: em(30);
   color: $c-white;
   padding: em(20);
+  height: em(200);
   font-weight: 600;
+
+  @include media($tablet) {
+    @include span-columns(4);
+    &:nth-child(2n+1) {
+      margin-right: 0;
+    }
+  }
+
   @include media($desktop-x) {
-    height: em(200);
     @include span-columns(3);
     &:nth-child(5) {
       margin-right: 0;
