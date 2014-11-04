@@ -11,15 +11,37 @@ var gulp = require('gulp')
 
 // Browserify Task
 gulp.task('browserify', function () {
-  gulp.src('js/main.js')
+  gulp.src('_src/_js/main.js')
     .pipe(browserify({transform:'reactify'}))
     .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('_site/js'));
+    .pipe(gulp.dest('js'));
 });
 
-// Deploy task
+// Sass Task
+gulp.task('sass', function () {
+  gulp.src('_src/_sass/main.scss')
+    .pipe(sass({style: 'expanded'}))
+    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(gulp.dest('css'))
+    .pipe(minifycss())
+    .pipe(gulp.dest('css'));
+});
+
+// Imagemin
+gulp.task('imagemin', function () {
+  gulp.src('_src/_img/*')
+    .pipe(imagemin({
+      progressive: true,
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('img'));
+});
+
+// Deploy Task
 gulp.task('deploy', function () {
   gulp.src('_site/**/*')
     .pipe(deploy());
 });
+
+// Watch Task
