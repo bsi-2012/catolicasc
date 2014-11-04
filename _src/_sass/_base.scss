@@ -64,6 +64,12 @@ ul {
 }
 
 .main-banner__caption {
+  @include media($mobile) {
+    display: none;
+  }
+  @include media($tablet) {
+    display: none;
+  }
   @include media($desktop-x) {
     position: absolute;
     bottom: 0;
@@ -89,11 +95,10 @@ ul {
 }
 
 .alpha-content {
-  margin-top: em(40);
-}
-
-.alpha-content {
-  padding: em(140) 0;
+  @include media($desktop-x) {
+    margin-top: em(40);
+    padding: em(140) 0;
+  }
 }
 
 .main-content {
@@ -110,19 +115,52 @@ ul {
 }
 
 .site-header {
-  padding: 0 0 em(20) 0;
+  @include media($mobile) {
+    padding: em(20) 0;
+  }
+
+  @include media($tablet) {
+    padding: em(20) 0;
+  }
+
   @include media($desktop-x) {
+    padding: 0 0 em(20) 0;
   }
 }
 
 .site-nav {
+  @include media($mobile) {
+    padding: em(20) 0;
+    display: none;
+    padding: em(20);
+  }
+
+  @include media($tablet) {
+    padding: em(20) 0;
+    display: none;
+    padding: em(20);
+  }
   @include media($desktop-x) {
     float: right;
     margin-top: 35px;
+    vertical-align: middle;
+    display: inline-block !important;
   }
 }
 
 .site-nav__item {
+  @include media($mobile) {
+    text-align: center;
+    font-size: em(20);
+    font-weight: 600;
+    margin: em(10) 0;
+  }
+  @include media($tablet) {
+    text-align: center;
+    font-size: em(20);
+    font-weight: 600;
+    margin: em(10) 0;
+  }
   @include media($desktop-x) {
     margin-left: em(10);
   }
@@ -134,7 +172,16 @@ ul {
   width: 100%;
   margin-bottom: em(20);
 
+  @include media($mobile) {
+    display: none;
+  }
+
+  @include media($tablet) {
+    display: none;
+  }
+
   @include media($desktop-x) {
+    display: inline-block !important;
   }
 }
 
@@ -252,8 +299,54 @@ ul {
   background-size: cover;
 }
 
-// Main Content
+.desktop-hide {
+  @include media($desktop-x) {
+    display: none;
+  }
+}
 
+.nav-toggle {
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  padding: em(20) em(70) em(20) 0;
+
+  span {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    content: '';
+    width: 35px;
+    height: 5px;
+    background: $c-white;
+    &:after,
+    &:before {
+      @extend span;
+    }
+    &:after {
+      bottom: -10px;
+    }
+    &:before {
+      top: -10px;
+    }
+  }
+
+  @include media($mobile) {
+    top: 40px;
+  }
+
+  @include media($tablet) {
+    top: 50px;
+  }
+
+  @include media($desktop-x) {
+    display: none;
+    visibility: hidden;
+  }
+
+}
+
+// Main Content
 .other-news {
   padding-right: em(50);
   @include media($desktop-x) {
