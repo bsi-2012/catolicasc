@@ -1,17 +1,17 @@
-<header class="site-header">
+<header class="site-header" role="banner">
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="site-title" href="{{ site.baseurl }}/"><img src="{{ "/img/catolicasc.png" | prepend: site.baseurl }}" alt=""></a>
 
-    <nav class="site-nav">
-      <!-- <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
-      </div> -->
+    <nav class="site-nav" role="navigation">
+      <ul class="sinte-nav__list">
+        <li class="site-nav__item"><a href="#" class="site-nav__link">Sobre</a></li>
+        <li class="site-nav__item"><a href="#" class="site-nav__link">Cursos</a></li>
+        <li class="site-nav__item"><a href="#" class="site-nav__link">Acadêmicos</a></li>
+        <li class="site-nav__item"><a href="#" class="site-nav__link">Pesquisa</a></li>
+        <li class="site-nav__item"><a href="#" class="site-nav__link">Contato</a></li>
+      </ul>
     </nav>
 
   </div>
