@@ -1,3 +1,11 @@
+@import 'helpers';
+
+// Colors
+
+$c-red: #AA4958;
+$c-darkred: #942536;
+$c-white: #f0f0f0;
+
 html {
   font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.5;
@@ -25,6 +33,11 @@ html {
   }
 }
 
+body {
+  @include flex-body;
+  background: $c-white;
+}
+
 figure {
   margin: 0;
 }
@@ -34,7 +47,103 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  @include transition(all 0.2s ease-in-out);
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  text-transform: uppercase;
+}
+
+.main-content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  padding: 0 0 em(60) 0;
+}
+
 .wrapper {
   @include outer-container;
   padding: 0 em(20);
+}
+
+.site-header {
+  @include media($desktop-x) {
+    padding: 0 0 em(20) 0;
+  }
+}
+
+.site-nav {
+  @include media($desktop-x) {
+    float: right;
+    margin-top: 30px;
+  }
+}
+
+.site-nav__item {
+  @include media($desktop-x) {
+    margin-left: em(10);
+  }
+}
+
+.secondary-actions {
+  background: $c-darkred;
+  padding: em(10) 0;
+  width: 100%;
+
+  @include media($desktop-x) {
+    margin-bottom: em(20);
+  }
+}
+
+.secondary-nav {
+  @include media($desktop-x) {
+    float: right;
+  }
+}
+
+.secondary-nav__link {
+  font-size: em(14);
+  font-weight: 600;
+}
+
+.secondary-nav__item {
+  @include media($desktop-x) {
+    margin-left: 30px;
+  }
+}
+
+.site-nav__item,
+.secondary-nav__item {
+  @include media($desktop-x) {
+    display: inline-block;
+    font-weight: 600;
+  }
+}
+
+.site-footer,
+.site-header {
+  background: $c-red;
+  @include clearfix;
+  a {
+    color: $c-white;
+    &:hover {
+      border-bottom: 1px solid $c-white;
+    }
+  }
+}
+
+.site-logo {
+  @include media($desktop-x) {
+    float: left;
+  }
 }
