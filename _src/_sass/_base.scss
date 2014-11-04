@@ -50,7 +50,7 @@ figure {
     bottom: 0;
     background: $ablack;
     width: 100%;
-    padding: em(20);
+    padding: em(20) em(120);
     a {
       color: $c-white;
       font-size: em(40);
@@ -236,4 +236,18 @@ li {
 
 .main-banner__img {
   background-size: cover;
+}
+
+// Main Content
+
+.other-news {
+  @include media($desktop-x) {
+    @include span-columns(8);
+  }
+}
+
+.site-sidebar {
+  @include media($desktop-x) {
+    @include span-columns(4);
+  }
 }
