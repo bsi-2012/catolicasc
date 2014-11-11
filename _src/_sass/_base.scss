@@ -378,8 +378,9 @@ ul {
 
 .other-news__link {
   color: $c-black;
+  border-bottom: 1px dotted $c-black;
   &:hover {
-    border-bottom: 1px dotted $c-black;
+    color: $c-darkred;
   }
 }
 
