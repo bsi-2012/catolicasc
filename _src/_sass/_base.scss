@@ -97,6 +97,7 @@ ul {
 
 .alpha-content {
   padding-bottom: em(80);
+  @include clearfix;
   @include media($desktop-x) {
     margin-top: em(70);
   }
@@ -360,6 +361,11 @@ ul {
 }
 
 // Main Content
+.other-news,
+.site-sidebar {
+  @include clearfix;
+}
+
 .other-news {
   padding-right: em(50);
   @include media($desktop-x) {
